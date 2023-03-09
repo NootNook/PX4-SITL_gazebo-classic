@@ -8,7 +8,7 @@
 
     <include>
       <uri>model://my_lidar</uri>
-      <pose>0 0 -0.07 0 1.57 0</pose>
+      <pose>0 0 -0.07 0 0 0</pose>
     </include>
 
     <joint name="my_lidar_joint" type="fixed">
