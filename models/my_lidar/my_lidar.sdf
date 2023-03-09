@@ -22,63 +22,63 @@
           </geometry>
         </visual> -->
 
-        <!-- ray sensor -->
-        <sensor name="sensor_ray" type="ray">
-          <visualize>0</visualize>
-          <ray>
-            <scan>
-              <horizontal>
-                <samples>300</samples>
-                <resolution>1.0</resolution>
-                <min_angle>-1.57</min_angle>
-                <max_angle>1.57</max_angle>
-              </horizontal>
-              <vertical>
-                <samples>100</samples>
-                <resolution>1.0</resolution>
-                <min_angle>-1.57</min_angle>
-                <max_angle>1.57</max_angle>
-              </vertical>
-            </scan>
-            <range>
-              <min>0.05</min>
-              <max>50.0</max>
-            </range>
-          </ray>
-          <always_on>true</always_on>
-          <update_rate>1.0</update_rate>
-          <plugin name="pc2" filename="libgazebo_ros_ray_sensor.so">
-            <ros>
-              <namespace>/ray</namespace>
-              <remapping>~/out:=pointcloud2</remapping>
-            </ros>
-            <output_type>sensor_msgs/PointCloud2</output_type>
-          </plugin>
-          <plugin name="pc" filename="libgazebo_ros_ray_sensor.so">
-            <ros>
-              <namespace>/ray</namespace>
-              <remapping>~/out:=pointcloud</remapping>
-            </ros>
-            <output_type>sensor_msgs/PointCloud</output_type>
-          </plugin>
-          <plugin name="laserscan" filename="libgazebo_ros_ray_sensor.so">
-            <ros>
-              <namespace>/ray</namespace>
-              <remapping>~/out:=laserscan</remapping>
-            </ros>
-            <output_type>sensor_msgs/LaserScan</output_type>
-          </plugin>
-          <plugin name="range" filename="libgazebo_ros_ray_sensor.so">
-            <ros>
-              <namespace>/ray</namespace>
-              <remapping>~/out:=range</remapping>
-            </ros>
-            <output_type>sensor_msgs/Range</output_type>
-          </plugin>
-        </sensor>
+      <!-- ray sensor -->
+      <sensor name="sensor_ray" type="ray">
+        <visualize>0</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>300</samples>
+              <resolution>1.0</resolution>
+              <min_angle>-3.14</min_angle>
+              <max_angle>3.14</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>100</samples>
+              <resolution>1.0</resolution>
+              <min_angle>-1.57</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.05</min>
+            <max>50.0</max>
+          </range>
+        </ray>
+        <always_on>true</always_on>
+        <update_rate>1.0</update_rate>
+        <plugin name="pc2" filename="libgazebo_ros_ray_sensor.so">
+          <ros>
+            <namespace>/ray</namespace>
+            <remapping>~/out:=pointcloud2</remapping>
+          </ros>
+          <output_type>sensor_msgs/PointCloud2</output_type>
+        </plugin>
+        <plugin name="pc" filename="libgazebo_ros_ray_sensor.so">
+          <ros>
+            <namespace>/ray</namespace>
+            <remapping>~/out:=pointcloud</remapping>
+          </ros>
+          <output_type>sensor_msgs/PointCloud</output_type>
+        </plugin>
+        <plugin name="laserscan" filename="libgazebo_ros_ray_sensor.so">
+          <ros>
+            <namespace>/ray</namespace>
+            <remapping>~/out:=laserscan</remapping>
+          </ros>
+          <output_type>sensor_msgs/LaserScan</output_type>
+        </plugin>
+        <plugin name="range" filename="libgazebo_ros_ray_sensor.so">
+          <ros>
+            <namespace>/ray</namespace>
+            <remapping>~/out:=range</remapping>
+          </ros>
+          <output_type>sensor_msgs/Range</output_type>
+        </plugin>
+      </sensor>
 
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+    </link>
   </model>
 </sdf>
